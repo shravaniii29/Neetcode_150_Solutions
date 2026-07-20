@@ -13,7 +13,8 @@ class Solution:
             freq[word] = freq.get(word, 0) + 1
 
         # Sort by frequency(desc), then word(asc)
-        sorted_words = sorted(freq.items(), key=lambda x: (-x[1], x[0])) #Negative frequency for descending order, word for ascending order. Negative frequency is used to sort in descending order because Python's sorted function sorts in ascending order by default. Negative values mein -2 is less than -1, so it will come first in the sorted order, effectively giving us a descending sort based on frequency. 
+        sorted_words = sorted(freq.items(), key=lambda x: (-x[1], x[0])) #Negative frequency for descending order, word for ascending order. 
+        #Negative frequency is used to sort in descending order because Python's sorted function sorts in ascending order by default. Negative values mein -2 is less than -1, so it will come first in the sorted order, effectively giving us a descending sort based on frequency. 
 
         ans = []
 

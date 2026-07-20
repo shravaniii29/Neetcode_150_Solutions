@@ -1,3 +1,6 @@
+#ARRAY EASY - Frequency of Unique Numbers
+#Given an array of integers arr, return true if the number of occurrences of each value in the array is unique or false otherwise.
+
 class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
         freq = {}
@@ -13,7 +16,7 @@ class Solution:
         return len(freq) == len(freq_set)
 
 
-        # Approach:
+# Approach:
         # 1. Count the frequency of every number using a hash map.
         # 2. Store all the frequencies in a hash set.
         # 3. If two numbers have the same frequency, the set size
