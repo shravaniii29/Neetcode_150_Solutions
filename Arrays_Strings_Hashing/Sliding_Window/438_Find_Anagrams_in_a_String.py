@@ -6,6 +6,12 @@ from collections import Counter
 
 class Solution:
     def findAnagrams(self, s: str, p: str):
+        
+        # Input (Input is an additional step to write in Tests where there is only blank terminal provided)
+        #s = input().strip()
+        #p = input().strip()
+        
+        
         if len(p) > len(s):
             return []
 
@@ -33,7 +39,9 @@ class Solution:
             if window == pCount:
                 ans.append(left)
 
-        return ans
+        return ans # print(ans) instead of return ans if there's only a blank terminal provided
+
+
 
 # Approach:
         # 1. Store the frequency of characters in p.
@@ -49,3 +57,4 @@ class Solution:
         #
         # Space Complexity: O(1)
         # - We use two Counter objects storing at most 26 lowercase letters.
+

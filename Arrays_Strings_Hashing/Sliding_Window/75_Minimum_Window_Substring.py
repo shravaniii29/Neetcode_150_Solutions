@@ -3,13 +3,10 @@
 
 #You may assume that the correct output is always unique.
 
-
-
 from collections import Counter
 
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-
 
         if len(t) > len(s):
             return ""
@@ -50,6 +47,60 @@ class Solution:
 
         return s[l:r+1] if minLen != float("inf") else ""
     
+    
+    
+# Blank Terminal Format ( TCS types )
+from collections import Counter
+
+def minWindow(s, t):
+
+    if len(t) > len(s):
+        return ""
+
+    tCount = Counter(t)
+    window = {}
+
+    have = 0
+    need = len(tCount)
+
+    left = 0
+    minLen = float("inf")
+    start = 0
+
+    for right in range(len(s)):
+
+        ch = s[right]
+        window[ch] = window.get(ch, 0) + 1
+
+        if ch in tCount and window[ch] == tCount[ch]:
+            have += 1
+
+        while have == need:
+
+            if right - left + 1 < minLen:
+                minLen = right - left + 1
+                start = left
+
+            window[s[left]] -= 1
+
+            if s[left] in tCount and window[s[left]] < tCount[s[left]]:
+                have -= 1
+
+            left += 1
+
+    if minLen == float("inf"):
+        return ""
+
+    return s[start:start + minLen]
+
+
+# Driver Code
+s = input().strip()
+t = input().strip()
+
+print(minWindow(s, t))
+
+
 # Approach:
         # 1. Store frequency of characters in t.
         # 2. Expand the window using the right pointer.
@@ -64,3 +115,5 @@ class Solution:
 
         # Space Complexity: O(m)
         # m = number of unique characters in t.
+        
+    
