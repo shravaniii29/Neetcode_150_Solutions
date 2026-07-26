@@ -7,7 +7,7 @@ class Solution:
 
         for word in strs:
 
-            key = "".join(sorted(word))
+            key = "".join(sorted(word)) #sorted() returns a LIST. Not a string. 'join' joins the letters back together.
 
             if key not in groups:
                 groups[key] = []
@@ -15,6 +15,11 @@ class Solution:
             groups[key].append(word)
 
         return list(groups.values())
+
+    # Driver Code
+    n = int(input().strip())
+    strs = input().split() #because strs in an array of strings and not integers ( thts why we didnt do list(map(int, input().split()))  )
+    print(groupAnagrams(strs))
 
 
 # Approach:

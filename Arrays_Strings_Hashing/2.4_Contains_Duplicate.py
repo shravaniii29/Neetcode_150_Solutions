@@ -11,13 +11,19 @@ class Solution:
         seen = set()
 
         for num in nums:
-
             if num in seen:
                 return True
-
             seen.add(num)
 
         return False
+    
+    # Driver Code
+    n = int(input().strip()) #Reads the size of the array.
+
+    nums = list(map(int, input().split()))
+
+    print(containsDuplicate(nums))
+    
     
 #TC: O(n)
 #SC: O(n)

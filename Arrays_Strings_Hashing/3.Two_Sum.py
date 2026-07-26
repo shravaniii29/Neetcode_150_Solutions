@@ -12,9 +12,17 @@ class Solution:
 
             if needed_number in visited_numbers:
                 return [visited_numbers[needed_number], i] #"Give me the index stored for number "need_number" "
-
             visited_numbers[nums[i]] = i # num : index
             
+        return [-1, -1] #if no pair exists python will return [-1,-1]
+    
+        # Driver Code
+        n = int(input().strip())
+        nums = list(map(int, input().split()))
+        target = int(input().strip())
+        print(*twoSum(nums, target)) # * basically unpacks the output, for example [0,1] => 0 1
+    
+    
 #JAVA:
 # import java.util.*;
 
