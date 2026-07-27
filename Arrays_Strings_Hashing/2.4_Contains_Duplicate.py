@@ -19,9 +19,7 @@ class Solution:
     
     # Driver Code
     n = int(input().strip()) #Reads the size of the array.
-
     nums = list(map(int, input().split()))
-
     print(containsDuplicate(nums))
     
     

@@ -11,14 +11,13 @@ class Solution:
 
             if key not in groups:
                 groups[key] = []
-
             groups[key].append(word)
 
         return list(groups.values())
 
     # Driver Code
     n = int(input().strip())
-    strs = input().split() #because strs in an array of strings and not integers ( thts why we didnt do list(map(int, input().split()))  )
+    strs = input().split() #because strs in an array of strings and not integers ( thts why we didnt do 'list(map(int, input().split()))'  )
     print(groupAnagrams(strs))
 
 
