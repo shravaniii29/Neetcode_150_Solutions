@@ -1,5 +1,5 @@
 #Solved using Lower Bound and Upper Bound (Binary Search)
-def lower_bound(arr, x):
+def lower_bound(arr, x): #x => target element to be searched
     left = 0
     right = len(arr)
 
