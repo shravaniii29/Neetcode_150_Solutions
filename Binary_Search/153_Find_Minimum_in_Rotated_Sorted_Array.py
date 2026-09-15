@@ -1,20 +1,22 @@
-class Solution:
-    def findMin(self, nums):
-        left = 0
-        right = len(nums) - 1
+def findMin(nums):
+    left = 0
+    right = len(nums) - 1
 
-        while left < right:
-            mid = (left + right) // 2
+    while left < right:
+        mid = (left + right) // 2
 
-            # Minimum is on the right side
-            if nums[mid] > nums[right]:
-                left = mid + 1
+        # If mid element is greater than the rightmost element,
+        # the minimum must be on the right side.
+        if nums[mid] > nums[right]:
+            left = mid + 1
 
-            # Minimum is on the left side (including mid)
-            else:
-                right = mid
+        # Otherwise, the minimum is at mid or somewhere on the left.
+        else:
+            right = mid
 
-        return nums[left]
+    # left == right, so we've found the minimum element.
+    return nums[left]
 
-# TC: O(log n)
-# SC: O(1)
+
+# Time Complexity: O(log n)
+# Space Complexity: O(1)
