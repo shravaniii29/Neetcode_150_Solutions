@@ -7,6 +7,5 @@ class Solution:
             if nums[j] == nums[i]:
                 return True
             i += 1
-            nums[i] = nums[j]
 
         return False
